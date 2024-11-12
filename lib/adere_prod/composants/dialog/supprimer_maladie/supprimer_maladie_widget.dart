@@ -119,7 +119,7 @@ class _SupprimerMaladieWidgetState extends State<SupprimerMaladieWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                       child: Container(
-                        width: double.infinity,
+                        width: 300.0,
                         height: 50.0,
                         decoration: BoxDecoration(),
                         alignment: AlignmentDirectional(0.0, 0.0),

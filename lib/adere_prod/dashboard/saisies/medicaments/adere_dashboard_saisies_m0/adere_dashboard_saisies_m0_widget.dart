@@ -789,12 +789,12 @@ class _AdereDashboardSaisiesM0WidgetState
                                                                           BoxDecoration(
                                                                         color:
                                                                             () {
-                                                                          if (rappelContainerSaisieIntakesEventRowList.first.done ==
-                                                                              true) {
-                                                                            return FlutterFlowTheme.of(context).cambridgeBlue;
-                                                                          } else if (rappelContainerSaisieIntakesEventRowList.length ==
+                                                                          if (rappelContainerSaisieIntakesEventRowList.length ==
                                                                               0) {
                                                                             return FlutterFlowTheme.of(context).persianOrange;
+                                                                          } else if (rappelContainerSaisieIntakesEventRowList.first.done ==
+                                                                              true) {
+                                                                            return FlutterFlowTheme.of(context).cambridgeBlue;
                                                                           } else if (rappelContainerSaisieIntakesEventRowList.first.done ==
                                                                               false) {
                                                                             return FlutterFlowTheme.of(context).error;

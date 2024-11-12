@@ -140,6 +140,7 @@ class _SupprimerMaladieWidgetState extends State<SupprimerMaladieWidget> {
                                 Navigator.pop(context);
                               },
                               child: Container(
+                                width: 130.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).jett,
                                   borderRadius: BorderRadius.circular(50.0),

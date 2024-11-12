@@ -819,14 +819,14 @@ class _AdereDashboardSaisiesM0WidgetState
                                                                           children: [
                                                                             Text(
                                                                               () {
-                                                                                if (functions.add2numbers(0, 0) == functions.add2numbers(1, 1)) {
-                                                                                  return '0';
+                                                                                if (rappelContainerSaisieIntakesEventRowList.length == 0) {
+                                                                                  return 'En attente';
                                                                                 } else if (rappelContainerSaisieIntakesEventRowList.first.done == false) {
                                                                                   return 'Oublié';
                                                                                 } else if (rappelContainerSaisieIntakesEventRowList.first.done == true) {
                                                                                   return 'Pris';
                                                                                 } else {
-                                                                                  return 'En attente';
+                                                                                  return '-';
                                                                                 }
                                                                               }(),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(

@@ -735,7 +735,115 @@ class _AdereDashboardSaisiesM0WidgetState
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .max,
-                                                              children: [],
+                                                              children: [
+                                                                FutureBuilder<
+                                                                    List<
+                                                                        SaisieIntakesEventRow>>(
+                                                                  future: SaisieIntakesEventTable()
+                                                                      .queryRows(
+                                                                    queryFn:
+                                                                        (q) => q
+                                                                            .eq(
+                                                                              'saisieintakes',
+                                                                              columnSaisieIntakesRow.id,
+                                                                            )
+                                                                            .eq(
+                                                                              'date',
+                                                                              FFAppState().now,
+                                                                            ),
+                                                                  ),
+                                                                  builder: (context,
+                                                                      snapshot) {
+                                                                    // Customize what your widget looks like when it's loading.
+                                                                    if (!snapshot
+                                                                        .hasData) {
+                                                                      return Center(
+                                                                        child:
+                                                                            SizedBox(
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
+                                                                          child:
+                                                                              CircularProgressIndicator(
+                                                                            valueColor:
+                                                                                AlwaysStoppedAnimation<Color>(
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      );
+                                                                    }
+                                                                    List<SaisieIntakesEventRow>
+                                                                        rappelContainerSaisieIntakesEventRowList =
+                                                                        snapshot
+                                                                            .data!;
+
+                                                                    return Container(
+                                                                      constraints:
+                                                                          BoxConstraints(
+                                                                        maxWidth:
+                                                                            184.0,
+                                                                      ),
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color:
+                                                                            () {
+                                                                          if (rappelContainerSaisieIntakesEventRowList.first.done ==
+                                                                              true) {
+                                                                            return FlutterFlowTheme.of(context).cambridgeBlue;
+                                                                          } else if (rappelContainerSaisieIntakesEventRowList.length ==
+                                                                              0) {
+                                                                            return FlutterFlowTheme.of(context).persianOrange;
+                                                                          } else if (rappelContainerSaisieIntakesEventRowList.first.done ==
+                                                                              false) {
+                                                                            return FlutterFlowTheme.of(context).error;
+                                                                          } else {
+                                                                            return Color(0x00000000);
+                                                                          }
+                                                                        }(),
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(20.0),
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            10.0,
+                                                                            5.0,
+                                                                            10.0,
+                                                                            5.0),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              () {
+                                                                                if (functions.add2numbers(0, 0) == functions.add2numbers(1, 1)) {
+                                                                                  return '0';
+                                                                                } else if (rappelContainerSaisieIntakesEventRowList.first.done == false) {
+                                                                                  return 'Oublié';
+                                                                                } else if (rappelContainerSaisieIntakesEventRowList.first.done == true) {
+                                                                                  return 'Pris';
+                                                                                } else {
+                                                                                  return 'En attente';
+                                                                                }
+                                                                              }(),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Inter',
+                                                                                    color: FlutterFlowTheme.of(context).eerieBlack,
+                                                                                    fontSize: 12.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ),
+                                                              ],
                                                             ),
                                                             Row(
                                                               mainAxisSize:

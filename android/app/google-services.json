@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352780324648",
+    "project_id": "coaching-3uxtx0",
+    "storage_bucket": "coaching-3uxtx0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352780324648:android:fcf7d75fdf187c0dbd8a1d",
+        "android_client_info": {
+          "package_name": "com.adere"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf0CelnjE0bSSSu0-GpQvlKBUtOvxjhc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
